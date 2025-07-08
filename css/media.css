@@ -1,0 +1,36 @@
+/* Адаптация для планшетов */
+@media (max-width: 992px) {
+  .reviews__card {
+    padding-left: 160px;
+  }
+
+  .reviews__photo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .reviews__card {
+    flex-direction: column;
+    padding: 30px;
+    padding-top: 150px;
+    /* Место для фото сверху */
+  }
+
+  .reviews__photo {
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+  }
+
+  .reviews__content {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .reviews__stars {
+    justify-content: center;
+  }
+}
