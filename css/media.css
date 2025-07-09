@@ -100,6 +100,16 @@
   }
 }
 
+@media (min-width: 1921px) {
+  .header_top {
+    margin-bottom: var(--nav-container-height);
+  }
+
+  .main {
+    padding-top: calc(var(--header-top-height) + var(--nav-container-height));
+  }
+}
+
 /* Стили для Full HD и широкоэкранных мониторов */
 @media (min-width: 1920px) and (max-width: 2559px) {
   :root {
@@ -229,20 +239,6 @@
   .reviews__name {
     font-size: 26px;
   }
-
-  .reviews__text {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 1921px) {
-  .header_top {
-    margin-bottom: var(--nav-container-height);
-  }
-
-  .main {
-    padding-top: calc(var(--header-top-height) + var(--nav-container-height));
-  }
 }
 
 /* Стили для ноутбуков */
@@ -278,6 +274,11 @@
 }
 
 @media (min-width: 768px) {
+  .title {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
   .reviews__wrapper {
     flex-direction: row;
     align-items: center;
@@ -308,7 +309,7 @@
   }
 
   .reviews__text {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -321,6 +322,10 @@
 
   .header__nav-container .nav__list {
     max-width: 100%;
+  }
+
+  .hero__image img {
+    display: none;
   }
 
   .about__container {
@@ -363,10 +368,6 @@
   .reviews__star {
     width: 30px;
     height: 30px;
-  }
-
-  .reviews__text {
-    font-size: 18px;
   }
 
   .reviews__sample-photo {
@@ -437,22 +438,31 @@
   /* Стили для бургер-иконки */
   .burger-menu {
     display: block;
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
     z-index: 1000;
     cursor: pointer;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 5px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+  }
+
+  .header__container {
+    position: relative;
+    padding-top: 60px;
   }
 
   .burger-icon {
-    width: 30px;
-    height: 3px;
+    width: 24px;
+    height: 2px;
     background-color: var(--color-black);
-    margin: 6px 0;
+    margin: 5px auto;
     transition: all 0.3s ease;
+    display: block;
   }
 
   /* Стили для мобильного меню */
@@ -463,7 +473,6 @@
     width: 100%;
     height: 100vh;
     background-color: rgba(237, 226, 222, 0.98);
-    backdrop-filter: blur(5px);
     z-index: 999;
     display: flex;
     flex-direction: column;
@@ -471,6 +480,9 @@
     align-items: center;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
   }
 
   .mobile-nav.open {
@@ -530,7 +542,7 @@
 
   .portfolio__main-title,
   .about__title {
-    font-size: 42px;
+    font-size: 40px;
   }
 
   .header__title {
@@ -613,6 +625,29 @@
 
   .mobile-nav__link {
     font-size: 20px;
+  }
+
+  .reviews__photo {
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+  }
+
+  .reviews__name {
+    font-size: 14px;
+  }
+
+  .reviews__text {
+    font-size: 10px;
+  }
+
+  .reviews__stars {
+    gap: 3px;
+  }
+
+  .reviews__star {
+    width: 20px;
+    height: 20px;
   }
 
   .burger-menu {
