@@ -102,11 +102,11 @@
 
 @media (min-width: 1921px) {
   .header_top {
-    margin-bottom: var(--nav-container-height);
+    margin-bottom: 10px;
   }
 
-  .main {
-    padding-top: calc(var(--header-top-height) + var(--nav-container-height));
+  .header__nav-container {
+    top: 165px;
   }
 }
 
@@ -341,7 +341,7 @@
   }
 
   .about__left img {
-    content: url("../img/avatars/photo1.jpg");
+    content: url("../img/avatars/photo.jpg");
     max-height: 400px;
     width: 100%;
     object-fit: cover;
@@ -411,7 +411,7 @@
     max-height: 400px;
     width: 100%;
     object-fit: cover;
-    border-radius: 65px;
+    border-radius: 25px;
   }
 
   .about__text {
@@ -423,6 +423,10 @@
 @media (min-width: 767px) {
   .reviews__card .reviews__wrapper .reviews__item .wrapper-photo img {
     max-height: 200px;
+  }
+
+  .reviews__title {
+    margin-bottom: 10px;
   }
 }
 
