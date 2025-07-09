@@ -273,7 +273,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .title {
     font-size: 32px;
     margin-bottom: 10px;
@@ -418,7 +418,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .reviews__card .reviews__wrapper .reviews__item .wrapper-photo img {
     max-height: 200px;
   }
@@ -429,6 +429,10 @@
   :root {
     --container-width: 100%;
     padding: 0 15px;
+  }
+
+  .hero {
+    display: none;
   }
 
   .header__nav-container {
@@ -453,7 +457,6 @@
 
   .header__container {
     position: relative;
-    padding-top: 60px;
   }
 
   .burger-icon {
@@ -467,6 +470,7 @@
 
   /* Стили для мобильного меню */
   .mobile-nav {
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -562,9 +566,18 @@
     padding: 20px;
   }
 
+  .reviews__card .reviews__wrapper .reviews__item .wrapper-photo img {
+    max-height: 0;
+  }
+
   .reviews__photo {
-    width: 120px;
-    height: 120px;
+    flex: 0 0 100px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .reviews__sample-photo {
+    max-height: 100px;
   }
 
   .reviews__name {

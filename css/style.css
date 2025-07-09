@@ -817,3 +817,8 @@ a {
 .form__button:hover {
     background: var(--color-steel-blue);
 }
+
+/* mobile-nav */
+.mobile-nav {
+    display: none;
+}
