@@ -2,6 +2,10 @@ html {
     box-sizing: border-box;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 *,
 *::before,
 *::after {
@@ -77,6 +81,8 @@ a {
     --color-platinum: #ede2de;
     --color-slate-grey: #24495b;
     --transition: 0.3s ease;
+    --header-top-height: 120px;
+    --nav-container-height: 80px;
 }
 
 .page {
@@ -185,20 +191,26 @@ a {
 }
 
 .header__nav-container {
+    border: 2px solid #e3c8cf;
     position: fixed;
     top: 102px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1600px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     padding: 10px 15px;
+    width: 100%;
+    max-width: var(--container-width);
     background-color: rgba(237, 226, 222, 0.9);
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: background-color 0.3s ease;
-    margin: 0 auto;
+}
+
+.header__nav-container.scrolled {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .header__nav-container.scrolled {
@@ -265,6 +277,19 @@ a {
     text-underline-offset: 5px;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
+.main {
+    transition: padding-top 0.3s ease;
+}
+
+.main.padded {
+    padding-top: 70px;
+    /* Высота вашего header__nav-container */
+}
+
 /* hero */
 .hero {
     width: 100%;
@@ -273,7 +298,7 @@ a {
 }
 
 .hero__container {
-    padding: 16px 15px 0;
+    padding: 16px 0 15px;
     width: 100%;
 }
 
@@ -281,7 +306,7 @@ a {
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin: 0;
+    margin: 0 auto;
     border-radius: 0;
     box-shadow: none;
 }
@@ -289,9 +314,8 @@ a {
 .hero__image img {
     width: 100%;
     height: auto;
-    max-height: 80vh;
-    object-fit: cover;
     display: block;
+    object-fit: cover;
 }
 
 /* Анимации */
@@ -432,6 +456,7 @@ a {
 [data-animate] {
     opacity: 0;
     transform: translateY(30px);
+    will-change: opacity, transform;
     transition: 0.6s ease;
 }
 
@@ -442,7 +467,8 @@ a {
 
 /* portfolio */
 .portfolio__container {
-    padding: 15px 0;
+    margin: 0 auto;
+    padding: 15px;
 }
 
 .portfolio__main-title {
@@ -467,9 +493,15 @@ a {
 
 .portfolio__list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.portfolio__list {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .portfolio__card {
@@ -654,6 +686,20 @@ a {
 .footer__logo img {
     height: 60px;
     width: auto;
+}
+
+/* burger */
+.hero__image {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.hero__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* contacts */
