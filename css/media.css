@@ -290,6 +290,7 @@
   }
 
   .reviews__photo {
+    flex: 0 0 150px;
     width: 150px;
     height: 150px;
   }
@@ -541,12 +542,12 @@
   }
 
   .title {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .portfolio__main-title,
   .about__title {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .header__title {
