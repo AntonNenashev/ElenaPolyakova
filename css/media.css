@@ -601,6 +601,10 @@
     padding-right: 15px;
   }
 
+  .contacts__title {
+    margin-bottom: 20px;
+  }
+
   .contacts__info,
   .contacts__form {
     padding: 20px;
@@ -619,6 +623,25 @@
   .social__link img {
     width: 35px;
     height: 35px;
+  }
+
+  .contacts__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contacts__info {
+    order: 1;
+  }
+
+  .contacts__form {
+    order: 2;
+  }
+
+  .footer__logo img {
+    height: 50px;
+    width: auto;
   }
 }
 
@@ -672,5 +695,24 @@
 
   .burger-icon {
     width: 25px;
+  }
+
+  .contacts__grid {
+    gap: 20px;
+  }
+
+  .contacts__info,
+  .contacts__form {
+    padding: 20px;
+  }
+
+  .contacts__subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .form__input,
+  .form__textarea {
+    padding: 12px;
   }
 }

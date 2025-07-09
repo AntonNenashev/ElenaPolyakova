@@ -702,16 +702,22 @@ a {
 
 /* contacts */
 .contacts {
-    padding: 80px 0;
     background-color: var(--color-white-antique);
     position: relative;
+}
+
+.contacts__container {
+    padding: 15px 0;
+}
+
+.contacts__title {
+    margin-bottom: 20px;
 }
 
 .contacts__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    margin-top: 50px;
 }
 
 .contacts__info {
