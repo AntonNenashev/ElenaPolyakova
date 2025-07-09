@@ -337,7 +337,7 @@
     flex: 0 0 100%;
     width: 100%;
     margin-right: 0;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .about__left img {
@@ -404,7 +404,7 @@
   .about__left {
     flex: 0 0 100%;
     margin-right: 0;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
 
   .about__left img {
@@ -458,6 +458,7 @@
 
   .header__container {
     position: relative;
+    padding: 15px 0;
   }
 
   .burger-icon {
@@ -548,6 +549,14 @@
   .portfolio__main-title,
   .about__title {
     font-size: 32px;
+  }
+
+  .about__title {
+    margin-bottom: 15px;
+  }
+
+  .about__left {
+    margin-bottom: 10px;
   }
 
   .header__title {
@@ -714,5 +723,11 @@
   .form__input,
   .form__textarea {
     padding: 12px;
+  }
+}
+
+@media (max-width: 426px) {
+  .burger-menu {
+    top: 65px;
   }
 }
