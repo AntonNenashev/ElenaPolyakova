@@ -17,6 +17,15 @@
     font-size: 88px;
   }
 
+  .about__container {
+    justify-content: space-around;
+    align-items: center
+  }
+
+  .about__text {
+    font-size: 26px;
+  }
+
   .header__title {
     font-size: 64px;
   }
@@ -63,6 +72,15 @@
     font-size: 64px;
   }
 
+  .about__container {
+    justify-content: space-around;
+    align-items: center
+  }
+
+  .about__text {
+    font-size: 26px;
+  }
+
   .portfolio__main-title,
   .about__title {
     font-size: 72px;
@@ -87,26 +105,6 @@
 
   .portfolio__list {
     gap: 30px;
-  }
-}
-
-@media (min-width: 1919px) {
-  .portfolio__list {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .portfolio__list li:nth-child(n+9) {
-    display: none;
-  }
-}
-
-@media (min-width: 1921px) {
-  .header_top {
-    margin-bottom: 10px;
-  }
-
-  .header__nav-container {
-    top: 165px;
   }
 }
 
@@ -223,6 +221,26 @@
   }
 }
 
+@media (min-width: 1921px) {
+  .header_top {
+    margin-bottom: 10px;
+  }
+
+  .header__nav-container {
+    top: 165px;
+  }
+}
+
+@media (min-width: 1919px) {
+  .portfolio__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .portfolio__list li:nth-child(n+9) {
+    display: none;
+  }
+}
+
 /* Сетка портфолио для больших экранов */
 @media (min-width: 1320px) {
   .portfolio__list {
@@ -273,109 +291,6 @@
   }
 }
 
-@media (min-width: 767px) {
-  .title {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-
-  .reviews__wrapper {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .reviews__wrapper-photo {
-    flex: 0 0 150px;
-    margin-bottom: 0;
-  }
-
-  .reviews__photo {
-    flex: 0 0 150px;
-    width: 150px;
-    height: 150px;
-  }
-
-  .reviews__content {
-    flex: 1;
-    padding-left: 20px;
-  }
-
-  .reviews__name {
-    font-size: 22px;
-  }
-
-  .reviews__star {
-    width: 25px;
-    height: 25px;
-  }
-
-  .reviews__text {
-    font-size: 12px;
-  }
-}
-
-/* Стили для планшетов и мобильных (до 991px) */
-@media (max-width: 992px) {
-  .header__nav-container {
-    max-width: 100vw;
-    padding: 10px 15px;
-  }
-
-  .header__nav-container .nav__list {
-    max-width: 100%;
-  }
-
-  .hero__image img {
-    display: none;
-  }
-
-  .about__container {
-    flex-direction: column;
-  }
-
-  .about__left {
-    flex: 0 0 100%;
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .about__left img {
-    content: url("../img/avatars/photo.jpg");
-    max-height: 400px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 25px;
-  }
-
-  .about__info {
-    flex: 0 0 100%;
-    width: 100%;
-  }
-
-  .reviews__card {
-    padding: 30px;
-  }
-
-  .reviews__photo {
-    width: 180px;
-    height: 180px;
-  }
-
-  .reviews__name {
-    font-size: 24px;
-  }
-
-  .reviews__star {
-    width: 30px;
-    height: 30px;
-  }
-
-  .reviews__sample-photo {
-    max-height: 200px;
-  }
-}
-
 @media (min-width: 992px) {
   .reviews__card .reviews__wrapper .reviews__item .wrapper-photo img {
     max-height: 250px;
@@ -421,12 +336,113 @@
 }
 
 @media (min-width: 767px) {
+  .title {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .reviews__wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .reviews__wrapper-photo {
+    flex: 0 0 150px;
+    margin-bottom: 0;
+  }
+
+  .reviews__photo {
+    flex: 0 0 150px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .reviews__content {
+    flex: 1;
+    padding-left: 20px;
+  }
+
+  .reviews__name {
+    font-size: 22px;
+  }
+
+  .reviews__star {
+    width: 25px;
+    height: 25px;
+  }
+
+  .reviews__text {
+    font-size: 12px;
+  }
+
   .reviews__card .reviews__wrapper .reviews__item .wrapper-photo img {
     max-height: 200px;
   }
 
   .reviews__title {
     margin-bottom: 10px;
+  }
+}
+
+/* Стили для планшетов и мобильных (до 991px) */
+@media (max-width: 992px) {
+  .header__nav-container {
+    max-width: 100vw;
+    padding: 10px 15px;
+  }
+
+  .header__nav-container .nav__list {
+    max-width: 100%;
+  }
+
+  .hero__image img {
+    display: none;
+  }
+
+  .about__container {
+    flex-direction: column;
+  }
+
+  .about__left {
+    flex: 0 0 100%;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .about__left img {
+    content: url("../img/avatars/photo1.jpg");
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+
+  .about__info {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .reviews__card {
+    padding: 30px;
+  }
+
+  .reviews__photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .reviews__name {
+    font-size: 24px;
+  }
+
+  .reviews__star {
+    width: 30px;
+    height: 30px;
+  }
+
+  .reviews__sample-photo {
+    max-height: 200px;
   }
 }
 
