@@ -509,10 +509,6 @@ a {
     align-items: flex-end;
     text-align: center;
     background-size: cover;
-    background-position: center;
-}
-
-.card-one {
     background-position: top !important;
 }
 
