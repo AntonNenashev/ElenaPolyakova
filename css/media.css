@@ -534,10 +534,6 @@
     display: block;
   }
 
-  .services__title {
-    margin-bottom: 40px;
-  }
-
   .pricing-card__title {
     font-size: 22px;
   }
@@ -603,8 +599,32 @@
   }
 
   .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .pricing-card {
+    transform: scale(0.95);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    padding: 20px;
+  }
+
+  .pricing-card__title {
+    font-size: 20px;
+  }
+
+  .pricing-card__price {
+    font-size: 28px;
+  }
+
+  .pricing-card__feature {
+    font-size: 14px;
+    padding-left: 25px;
   }
 
   .extras-grid,
@@ -616,14 +636,51 @@
   .services__subtitle {
     font-size: 26px;
   }
+
+  .extras-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .extra-card:nth-child(3) {
+    grid-column: 1 / -1;
+    width: 50%;
+    margin: 0 auto;
+    justify-self: center;
+  }
+
+  .extra-card {
+    min-height: 100%;
+  }
+
+  .services-types {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .service-type:nth-child(3) {
+    grid-column: 1 / -1;
+    width: 50%;
+    margin: 0 auto;
+    justify-self: center;
+  }
+
+  .service-type {
+    min-height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 @media (min-width: 767px) {
-  .title {
-    font-size: 32px;
-    margin-bottom: 15px;
-  }
-
   .reviews__wrapper {
     flex-direction: row;
     align-items: center;
@@ -660,10 +717,6 @@
 
   .reviews__card .reviews__wrapper .reviews__item .wrapper-photo img {
     max-height: 200px;
-  }
-
-  .reviews__title {
-    margin-bottom: 10px;
   }
 }
 
@@ -752,7 +805,6 @@
     right: 15px;
     z-index: 1000;
     cursor: pointer;
-    padding: 8px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 4px;
     width: 40px;
@@ -784,7 +836,6 @@
     height: 100vh;
     background-color: rgba(237, 226, 222, 0.98);
     z-index: 999;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -952,8 +1003,16 @@
     order: 2;
   }
 
+  .footer__logo {
+    display: inline-block;
+    max-width: 100%;
+  }
+
   .footer__logo img {
+    width: auto;
     height: 30px;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .services__title {
@@ -968,6 +1027,7 @@
   .pricing-grid {
     grid-template-columns: 1fr;
     max-width: 500px;
+    gap: 20px;
   }
 
   .extras-grid,
