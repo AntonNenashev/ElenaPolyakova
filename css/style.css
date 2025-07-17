@@ -2,8 +2,17 @@ html {
     box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 /* prefers-reduced-motion общие настройки */
 @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
 
     *,
     *::before,
@@ -784,7 +793,8 @@ a {
 }
 
 .extra-card__item::before {
-    content: "✓"; /* Кастомный маркер */
+    content: "✓";
+    /* Кастомный маркер */
     color: var(--color-steel-blue);
     position: absolute;
     left: 0;
