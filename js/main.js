@@ -1,4 +1,24 @@
+// ========== Настройки анимаций ==========
+const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function shouldAnimate() {
+    return !motionQuery.matches;
+}
+
+function setupMotionPreferences() {
+    // Остановка всех анимаций при изменении настроек
+    motionQuery.addEventListener('change', () => {
+        if (motionQuery.matches) {
+            document.querySelectorAll('*').forEach(el => {
+                el.getAnimations().forEach(anim => anim.cancel());
+            });
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+    setupMotionPreferences();
+
     // ========== Плавная прокрутка ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -8,10 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
+                const scrollOptions = {
+                    behavior: shouldAnimate() ? 'smooth' : 'auto',
                     block: 'start'
-                });
+                };
+                
+                targetElement.scrollIntoView(scrollOptions);
                 history.pushState(null, null, targetId);
 
                 // Обновляем активный пункт меню
@@ -31,6 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Создаем элементы модального окна
         const modal = document.createElement('div');
         modal.className = 'portfolio-modal';
+        modal.setAttribute('aria-hidden', 'true');
+        modal.setAttribute('aria-modal', 'true');
         modal.innerHTML = `
             <div class="modal-content">
                 <img class="modal-image" alt="Фото из портфолио">
@@ -44,13 +68,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Функции управления модальным окном
         const openModal = (imageSrc) => {
+            if (shouldAnimate()) {
+                modal.style.transition = 'opacity 0.3s ease';
+            } else {
+                modal.style.transition = 'none';
+            }
+            
             modalImg.src = imageSrc;
+            modal.setAttribute('aria-hidden', 'false');
             modal.classList.add('active');
             body.classList.add('no-scroll');
             closeBtn.focus();
         };
 
         const closeModal = () => {
+            if (shouldAnimate()) {
+                modal.style.transition = 'opacity 0.3s ease';
+            }
+            
+            modal.setAttribute('aria-hidden', 'true');
             modal.classList.remove('active');
             body.classList.remove('no-scroll');
         };
@@ -64,10 +100,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 card.style.backgroundPosition = 'center';
                 card.style.backgroundRepeat = 'no-repeat';
 
-                card.addEventListener('click', () => openModal(bgImage));
-                card.addEventListener('keydown', (e) => {
+                const clickHandler = () => openModal(bgImage);
+                const keyHandler = (e) => {
                     if (e.key === 'Enter') openModal(bgImage);
-                });
+                };
+
+                card.addEventListener('click', clickHandler);
+                card.addEventListener('keydown', keyHandler);
+
+                // Сохраняем ссылки на обработчики для последующего удаления
+                card._clickHandler = clickHandler;
+                card._keyHandler = keyHandler;
             }
         });
 
@@ -85,37 +128,50 @@ document.addEventListener('DOMContentLoaded', function () {
     const animateElements = () => {
         document.querySelectorAll('[data-animate]').forEach(el => {
             const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.75) {
+            const isInView = rect.top < window.innerHeight * 0.75;
+            
+            if (isInView) {
+                if (shouldAnimate()) {
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                }
                 el.classList.add('animated');
             }
         });
     };
 
-    window.addEventListener('scroll', animateElements);
+    // Оптимизация обработчика скролла
+    let isScrolling;
+    window.addEventListener('scroll', () => {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(animateElements, 50);
+    }, { passive: true });
+    
     animateElements();
-
-    // ========== Изменение header при скролле ==========
-    const headerNav = document.querySelector('.header__nav-container');
-    if (headerNav) {
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 50) {
-                headerNav.classList.add('scrolled');
-            } else {
-                headerNav.classList.remove('scrolled');
-            }
-        });
-    }
 
     // ========== Бургер-меню ==========
     const burgerMenu = document.querySelector('.burger-menu');
     const mobileNav = document.querySelector('.mobile-nav');
 
     if (burgerMenu && mobileNav) {
-        burgerMenu.addEventListener('click', function () {
-            this.classList.toggle('open');
+        const toggleMenu = () => {
+            const isOpening = !burgerMenu.classList.contains('open');
+            
+            if (shouldAnimate()) {
+                mobileNav.style.transition = 'transform 0.3s ease';
+            } else {
+                mobileNav.style.transition = 'none';
+            }
+            
+            burgerMenu.classList.toggle('open');
             mobileNav.classList.toggle('open');
             document.body.classList.toggle('no-scroll');
-        });
+            
+            if (isOpening) {
+                mobileNav.querySelector('a')?.focus();
+            }
+        };
+
+        burgerMenu.addEventListener('click', toggleMenu);
 
         document.querySelectorAll('.mobile-nav__link').forEach(link => {
             link.addEventListener('click', () => {
@@ -130,24 +186,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav__link');
 
-    const observer = new IntersectionObserver(
-        (entries) => {
+    if (sections.length && navLinks.length) {
+        const observerOptions = {
+            rootMargin: '-50% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
                     navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active');
-                        }
+                        link.classList.toggle(
+                            'active',
+                            link.getAttribute('href') === `#${id}`
+                        );
                     });
                 }
             });
-        }, {
-            rootMargin: '-50% 0px -50% 0px',
-            threshold: 0
-        }
-    );
+        }, observerOptions);
 
-    sections.forEach(section => observer.observe(section));
+        sections.forEach(section => observer.observe(section));
+    }
+
+    // Чистка обработчиков при необходимости
+    window.addEventListener('beforeunload', () => {
+        portfolioCards.forEach(card => {
+            if (card._clickHandler) {
+                card.removeEventListener('click', card._clickHandler);
+            }
+            if (card._keyHandler) {
+                card.removeEventListener('keydown', card._keyHandler);
+            }
+        });
+    });
 });

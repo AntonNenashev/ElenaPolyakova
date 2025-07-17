@@ -56,6 +56,88 @@
   .contacts {
     padding: 100px 0;
   }
+
+  .services__title {
+    font-size: 88px;
+    margin-bottom: 80px;
+  }
+
+  .services__subtitle {
+    font-size: 64px;
+  }
+
+  .pricing-grid {
+    max-width: 2000px;
+    gap: 60px;
+  }
+
+  .pricing-card {
+    padding: 60px;
+    border-radius: 30px;
+  }
+
+  .pricing-card__title {
+    font-size: 48px;
+  }
+
+  .pricing-card__price {
+    font-size: 64px;
+  }
+
+  .pricing-card__feature {
+    font-size: 32px;
+    padding-left: 50px;
+    margin-bottom: 20px;
+  }
+
+  .pricing-card__feature::before {
+    font-size: 32px;
+  }
+
+  .pricing-card__equipment {
+    font-size: 28px;
+  }
+
+  .extras-grid,
+  .services-types {
+    max-width: 2000px;
+    gap: 50px;
+  }
+
+  .extra-card {
+    padding: 50px;
+    border-radius: 25px;
+  }
+
+  .extra-card__title {
+    font-size: 36px;
+  }
+
+  .extra-card__price {
+    font-size: 32px;
+  }
+
+  .extra-card__item {
+    font-size: 28px;
+    padding-left: 40px;
+  }
+
+  .service-type {
+    padding: 50px 40px;
+  }
+
+  .service-type__icon {
+    height: 100px;
+    margin-bottom: 40px;
+  }
+
+  .service-type__title {
+    font-size: 36px;
+  }
+
+  .service-type__description {
+    font-size: 28px;
+  }
 }
 
 /* Стили для 2K разрешений */
@@ -105,6 +187,88 @@
 
   .portfolio__list {
     gap: 30px;
+  }
+
+  .services__title {
+    font-size: 72px;
+    margin-bottom: 60px;
+  }
+
+  .services__subtitle {
+    font-size: 48px;
+  }
+
+  .pricing-grid {
+    max-width: 1600px;
+    gap: 50px;
+  }
+
+  .pricing-card {
+    padding: 50px;
+    border-radius: 25px;
+  }
+
+  .pricing-card__title {
+    font-size: 36px;
+  }
+
+  .pricing-card__price {
+    font-size: 48px;
+  }
+
+  .pricing-card__feature {
+    font-size: 24px;
+    padding-left: 40px;
+    margin-bottom: 15px;
+  }
+
+  .pricing-card__feature::before {
+    font-size: 24px;
+  }
+
+  .pricing-card__equipment {
+    font-size: 20px;
+  }
+
+  .extras-grid,
+  .services-types {
+    max-width: 1600px;
+    gap: 40px;
+  }
+
+  .extra-card {
+    padding: 40px;
+    border-radius: 20px;
+  }
+
+  .extra-card__title {
+    font-size: 28px;
+  }
+
+  .extra-card__price {
+    font-size: 24px;
+  }
+
+  .extra-card__item {
+    font-size: 20px;
+    padding-left: 30px;
+  }
+
+  .service-type {
+    padding: 40px 30px;
+  }
+
+  .service-type__icon {
+    height: 80px;
+    margin-bottom: 30px;
+  }
+
+  .service-type__title {
+    font-size: 28px;
+  }
+
+  .service-type__description {
+    font-size: 20px;
   }
 }
 
@@ -219,6 +383,86 @@
     font-size: 20px;
     padding: 20px 40px;
   }
+
+  .services__title {
+    font-size: 64px;
+    margin-bottom: 50px;
+  }
+
+  .services__subtitle {
+    font-size: 36px;
+  }
+
+  .pricing-grid {
+    max-width: 1400px;
+    gap: 40px;
+  }
+
+  .pricing-card {
+    padding: 40px;
+    border-radius: 20px;
+  }
+
+  .pricing-card__title {
+    font-size: 28px;
+  }
+
+  .pricing-card__price {
+    font-size: 36px;
+  }
+
+  .pricing-card__feature {
+    font-size: 18px;
+    padding-left: 35px;
+  }
+
+  .pricing-card__feature::before {
+    font-size: 20px;
+  }
+
+  .pricing-card__equipment {
+    font-size: 16px;
+  }
+
+  .extras-grid,
+  .services-types {
+    max-width: 1200px;
+    gap: 30px;
+  }
+
+  .extra-card {
+    padding: 30px;
+  }
+
+  .extra-card__title {
+    font-size: 22px;
+  }
+
+  .extra-card__price {
+    font-size: 20px;
+  }
+
+  .extra-card__item {
+    font-size: 16px;
+    padding-left: 25px;
+  }
+
+  .service-type {
+    padding: 30px 25px;
+  }
+
+  .service-type__icon {
+    height: 60px;
+    margin-bottom: 25px;
+  }
+
+  .service-type__title {
+    font-size: 22px;
+  }
+
+  .service-type__description {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 1921px) {
@@ -289,6 +533,30 @@
   .portfolio__list li:nth-child(9) {
     display: block;
   }
+
+  .services__title {
+    margin-bottom: 40px;
+  }
+
+  .pricing-card__title {
+    font-size: 22px;
+  }
+
+  .pricing-card__price {
+    font-size: 28px;
+  }
+
+  .pricing-card__feature {
+    font-size: 16px;
+  }
+
+  .extra-card__title {
+    font-size: 18px;
+  }
+
+  .service-type__title {
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -333,12 +601,27 @@
     font-size: 14px;
     line-height: 30px;
   }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
+  .extras-grid,
+  .services-types {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+
+  .services__subtitle {
+    font-size: 26px;
+  }
 }
 
 @media (min-width: 767px) {
   .title {
     font-size: 32px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   .reviews__wrapper {
@@ -672,6 +955,43 @@
   .footer__logo img {
     height: 30px;
   }
+
+  .services__title {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .services__subtitle {
+    font-size: 24px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .extras-grid,
+  .services-types {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .pricing-card {
+    padding: 25px 20px;
+  }
+
+  .pricing-card__title {
+    font-size: 20px;
+  }
+
+  .pricing-card__price {
+    font-size: 26px;
+  }
+
+  .extra-card,
+  .service-type {
+    padding: 20px 15px;
+  }
 }
 
 /* Дополнительные стили для очень маленьких экранов */
@@ -743,6 +1063,36 @@
   .form__input,
   .form__textarea {
     padding: 12px;
+  }
+
+  .services__title {
+    font-size: 28px;
+  }
+
+  .services__subtitle {
+    font-size: 20px;
+  }
+
+  .pricing-card__title {
+    font-size: 18px;
+  }
+
+  .pricing-card__price {
+    font-size: 22px;
+  }
+
+  .pricing-card__feature {
+    font-size: 14px;
+    padding-left: 25px;
+  }
+
+  .extra-card__title,
+  .service-type__title {
+    font-size: 16px;
+  }
+
+  .service-type__description {
+    font-size: 14px;
   }
 }
 
