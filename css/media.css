@@ -469,10 +469,6 @@
   .header_top {
     margin-bottom: 10px;
   }
-
-  .header__nav-container {
-    top: 165px;
-  }
 }
 
 @media (min-width: 1919px) {
