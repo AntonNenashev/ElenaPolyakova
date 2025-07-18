@@ -221,3 +221,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// ========== Изменение header при скролле ==========
+const headerNav = document.querySelector('.header__nav-container');
+if (headerNav) {
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+            headerNav.classList.add('scrolled');
+        } else {
+            headerNav.classList.remove('scrolled');
+        }
+    });
+}
