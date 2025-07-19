@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     behavior: shouldAnimate() ? 'smooth' : 'auto',
                     block: 'start'
                 };
-                
+
                 targetElement.scrollIntoView(scrollOptions);
                 history.pushState(null, null, targetId);
 
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 modal.style.transition = 'none';
             }
-            
+
             modalImg.src = imageSrc;
             modal.setAttribute('aria-hidden', 'false');
             modal.classList.add('active');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (shouldAnimate()) {
                 modal.style.transition = 'opacity 0.3s ease';
             }
-            
+
             modal.setAttribute('aria-hidden', 'true');
             modal.classList.remove('active');
             body.classList.remove('no-scroll');
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('[data-animate]').forEach(el => {
             const rect = el.getBoundingClientRect();
             const isInView = rect.top < window.innerHeight * 0.75;
-            
+
             if (isInView) {
                 if (shouldAnimate()) {
                     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -144,8 +144,10 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', () => {
         window.clearTimeout(isScrolling);
         isScrolling = setTimeout(animateElements, 50);
-    }, { passive: true });
-    
+    }, {
+        passive: true
+    });
+
     animateElements();
 
     // ========== Бургер-меню ==========
@@ -155,19 +157,19 @@ document.addEventListener('DOMContentLoaded', function () {
     if (burgerMenu && mobileNav) {
         const toggleMenu = () => {
             const isOpening = !burgerMenu.classList.contains('open');
-            
+
             if (shouldAnimate()) {
                 mobileNav.style.transition = 'transform 0.3s ease';
             } else {
                 mobileNav.style.transition = 'none';
             }
-            
+
             burgerMenu.classList.toggle('open');
             mobileNav.classList.toggle('open');
             document.body.classList.toggle('no-scroll');
-            
+
             if (isOpening) {
-                mobileNav.querySelector('a')?.focus();
+                mobileNav.querySelector('a') ? .focus();
             }
         };
 
@@ -233,3 +235,25 @@ if (headerNav) {
         }
     });
 }
+
+// Обработка клика по ссылке "Главная"
+document.querySelectorAll('.nav__link[href="#main"], .mobile-nav__link[href="#main"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+        // Если мы уже вверху страницы, ничего не делаем
+        if (window.pageYOffset === 0) return;
+
+        e.preventDefault();
+
+        // Плавный скролл наверх
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+        // Закрытие мобильного меню, если оно открыто
+        if (document.querySelector('.mobile-nav').classList.contains('open')) {
+            document.querySelector('.mobile-nav').classList.remove('open');
+            document.querySelector('.burger-menu').classList.remove('active');
+        }
+    });
+});
