@@ -869,8 +869,9 @@
   }
 
   /* Анимация бургер-иконки при открытии */
-  .burger-menu.open .burger-icon:nth-child(1) {
-    transform: rotate(-45deg) translate(-6px, 6px);
+  .burger-menu[aria-expanded="true"] .burger-icon:nth-child(1) {
+    transform: rotate(-45deg);
+    transform-origin: center;
   }
 
   .burger-menu.open .burger-icon:nth-child(2) {

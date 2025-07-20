@@ -95,6 +95,8 @@ a {
     --color-platinum: #ede2de;
     --color-slate-grey: #24495b;
     --transition: 0.3s ease;
+    --transition-fast: 0.2s ease;
+    --container-width: 1630px;
 }
 
 .page {
@@ -134,6 +136,21 @@ a {
     padding: 0;
     background-color: transparent;
     cursor: pointer;
+}
+
+/* Для всех кликабельных элементов */
+[class*="__button"],
+[class*="__link"] {
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+/* Состояния фокуса для доступности */
+[class*="__input"]:focus-visible,
+[class*="__button"]:focus-visible {
+    outline: 2px solid var(--color-steel-blue);
+    outline-offset: 2px;
 }
 
 .title {
@@ -235,18 +252,11 @@ a {
 .nav__list {
     display: flex;
     justify-content: space-between;
-    position: relative;
-    padding: 8px;
-    width: 100%;
-}
-
-.nav__list {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     padding: 0 20px;
     margin: 0 auto;
     list-style: none;
+    position: relative;
 }
 
 .nav__item {
@@ -317,6 +327,8 @@ a {
     margin: 0 auto;
     border-radius: 0;
     box-shadow: none;
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 .hero__image img {
@@ -324,6 +336,7 @@ a {
     height: auto;
     display: block;
     object-fit: cover;
+    object-position: center;
 }
 
 /* Анимации */
@@ -369,12 +382,6 @@ a {
     font-weight: 400;
     line-height: 40px;
     color: var(--color-black);
-}
-
-.text {
-    column-count: 3;
-    column-gap: 20px;
-    max-width: 600px;
 }
 
 .about__info {
@@ -486,6 +493,17 @@ a {
 }
 
 /* portfolio */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 /* Модальное окно */
 .portfolio-modal {
     position: fixed;
@@ -584,14 +602,15 @@ a {
 }
 
 .portfolio__list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: minmax(300px, auto);
 }
 
 .portfolio__card {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    min-height: 400px;
+    min-height: clamp(250px, 30vw, 400px);
     display: flex;
     align-items: flex-end;
     text-align: center;
@@ -933,7 +952,7 @@ a {
 .reviews__name {
     font-family: "PlayfairDisplay", serif;
     font-size: 24px;
-    color: var(--color-dark-green);
+    color: var(--color-black);
     margin-bottom: 5px;
 }
 
@@ -997,17 +1016,16 @@ a {
     pointer-events: auto;
 }
 
-.hero__image {
-    max-height: 100vh;
+.footer__copyright {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
     overflow: hidden;
-}
-
-.hero__image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    object-position: center;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* contacts */
