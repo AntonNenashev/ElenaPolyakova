@@ -909,6 +909,10 @@
     display: none;
   }
 
+  .header_top {
+    margin-bottom: 0;
+  }
+
   .header__nav-container {
     display: none;
   }
@@ -1239,12 +1243,25 @@
     padding-right: 10px;
   }
 
+  .header__container {
+    padding-bottom: 10px;
+  }
+
+  .about__container {
+    padding: 10px 0;
+  }
+
   .about__text {
     font-size: 14px;
   }
 
   .about__left img {
     content: url("../img/avatars/photo1.webp");
+  }
+
+  .portfolio__main-title,
+  .about__title {
+    font-size: 26px;
   }
 
   .portfolio__content {
@@ -1318,6 +1335,10 @@
     font-size: 20px;
   }
 
+  .pricing-card__price {
+    margin: 0 0 10px;
+  }
+
   .pricing-card__title {
     font-size: 18px;
   }
@@ -1331,6 +1352,10 @@
     padding-left: 25px;
   }
 
+  .pricing-card__features {
+    margin-bottom: 15px;
+  }
+
   .extra-card__title,
   .service-type__title {
     font-size: 17px;
@@ -1338,6 +1363,10 @@
 
   .service-type__description {
     font-size: 14px;
+  }
+
+  .services__title {
+    margin-bottom: 15px;
   }
 
   .extra-card__price {
@@ -1349,6 +1378,10 @@
   .extra-card__item {
     margin-bottom: 10px;
     line-height: 1;
+  }
+
+  .pricing-card {
+    padding: 20px 15px;
   }
 
   .footer__logo img {
@@ -1373,6 +1406,19 @@
     padding: 10px;
   }
 
+  .portfolio__main-title,
+  .about__title {
+    font-size: 24px;
+  }
+
+  .services__container {
+    padding: 10px 0;
+  }
+
+  .pricing-card__price {
+    font-size: 16px;
+  }
+
   .extra-card__item {
     margin-bottom: 8px;
   }
@@ -1383,5 +1429,12 @@
 
   .footer__container {
     padding: 6px 0;
+  }
+}
+
+@media (max-width: 340px) {
+  .burger-menu {
+    top: 50px;
+    right: 19px;
   }
 }
