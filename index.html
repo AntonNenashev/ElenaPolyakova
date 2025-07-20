@@ -18,6 +18,9 @@
     content="Профессиональная фотосъемка в Севастополе и Крыму. Свадьбы, семейные фотосессии, портреты и любые другие виды фотосъемки.">
   <meta property="og:image" content="https://вашсайт/img/avatars/photo.jpg">
 
+  <meta property="og:site_name" content="Фотограф Елена Полякова">
+  <meta property="og:locale" content="ru_RU">
+
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://вашсайт/">
@@ -49,7 +52,7 @@
   <header class="header">
     <div class="container">
       <div class="header__container">
-        <button class="burger-menu" aria-label="Открыть меню" aria-expanded="false">
+        <button class="burger-menu" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav">
           <span class="burger-icon"></span>
           <span class="burger-icon"></span>
           <span class="burger-icon"></span>
@@ -753,7 +756,8 @@
             <h3 class="services__subtitle">Типы фотосессий</h3>
             <div class="services-types">
               <article class="service-type">
-                <img src="img/icons/camera.png" alt="Иконка индивидуальная" class="service-type__icon" width="50" height="50">
+                <img src="img/icons/camera.png" alt="Иконка индивидуальная" class="service-type__icon" width="50"
+                  height="50">
                 <h4 class="service-type__title">Индивидуальная</h4>
                 <p class="service-type__description">Портреты, имиджевые фото, профессиональные снимки</p>
               </article>
@@ -1307,7 +1311,7 @@
                 <article class="reviews__item">
                   <div class="reviews__content">
                     <h4 class="reviews__name" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                      <span itemprop="name">Дарья</span>
+                      <span itemprop="name">Екатерина</span>
                     </h4>
                     <div class="reviews__stars" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
                       <meta itemprop="ratingValue" content="5">
@@ -1319,8 +1323,13 @@
                       <img src="img/icons/star.png" alt="Рейтинг: 5 из 5" class="reviews__star">
                     </div>
                     <div itemprop="reviewBody">
-                      <p class="reviews__text">Спасибо Елене.</p>
-                      <p class="reviews__text">Открыли сезон лаванды перед самым моим отъездом.</p>
+                      <p class="reviews__text">Договаривались на&nbsp;съемку детского утренника в&nbsp;саду! Елена
+                        пришла заранее, поснимала детей до&nbsp;утренника, установила дополнительный свет в&nbsp;зале.
+                        В&nbsp;итоге мы&nbsp;получили более 300 снимков хорошего качества!!! Я&nbsp;однозначно
+                        рекомендую данного специалиста для коллективных, а&nbsp;тем более персональных съемок!!! Было
+                        очень приятно сотрудничать, думаю, что повторим!!! </p>
+                      <p class="reviews__text">В&nbsp;целом процесс съемки прошёл
+                        великолепно. Я&nbsp;доволен результатом!</p>
                       <img src="img/reviews/photo25.jpg" alt="Фото c Дарьей"
                         class="reviews__sample-photo sample-photo-2" itemprop="image">
                     </div>
@@ -1485,7 +1494,7 @@
     <div class="container">
       <div class="footer__container">
         <div class="footer__copyright">
-          <p>&copy; 2023 Елена Полякова. Профессиональный фотограф в Севастополе.</p>
+          <p>&copy; <span id="current-year"></span> Елена Полякова. Профессиональный фотограф в Севастополе.</p>
         </div>
         <div class="footer__dev">
           <a href="https://arcadia-web.ru/" class="footer__logo logo" rel="noopener noreferrer">
@@ -1510,8 +1519,7 @@
   <script defer src="./js/main.js"></script>
 
   <script>
-    document.querySelector('.footer__copyright').innerHTML =
-      `&copy; ${new Date().getFullYear()} Елена Полякова. Профессиональный фотограф в Севастополе.`;
+    document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
 
   <script type="application/ld+json">
