@@ -476,10 +476,10 @@ a {
 }
 
 .about__text {
-    max-width: 1195px;
+    max-width: 100%;
     font-size: 18px;
     font-weight: 400;
-    line-height: 40px;
+    line-height: 1;
     color: var(--color-black);
 }
 
@@ -488,6 +488,7 @@ a {
         -ms-flex: 1;
             flex: 1;
     max-width: 1200px;
+    padding: 10px;
     -webkit-animation: fadeInLeft 1s ease;
             animation: fadeInLeft 1s ease;
 }
@@ -497,7 +498,6 @@ a {
         -ms-flex: 0 0 20%;
             flex: 0 0 20%;
     max-width: 100%;
-    margin-right: 20px;
 }
 
 .about__left img {
@@ -506,7 +506,7 @@ a {
     max-height: 500px;
     -o-object-fit: cover;
        object-fit: cover;
-    border-radius: 65px;
+    border-radius: 30px;
 }
 
 @-webkit-keyframes fadeInLeft {
