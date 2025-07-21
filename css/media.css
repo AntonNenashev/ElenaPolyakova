@@ -42,6 +42,10 @@
     line-height: 1.8;
   }
 
+  .header__container {
+    padding-top: 105px;
+  }
+
   .header__title {
     font-size: 64px;
   }
