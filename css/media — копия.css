@@ -69,10 +69,6 @@
     padding: 100px 0;
   }
 
-  .portfolio__list li:nth-child(n+9) {
-    display: none;
-  }
-
   .services__title {
     font-size: 88px;
     margin-bottom: 80px;
@@ -111,23 +107,6 @@
   }
 
   .pricing-card__equipment {
-    font-size: 28px;
-  }
-
-  .reviews__star {
-    width: 55px;
-    height: 55px;
-  }
-
-  .reviews__wrapper-photo {
-    flex: 0 0 260px;
-  }
-
-  .reviews__text {
-    font-size: 24px;
-  }
-
-  .reviews__name {
     font-size: 28px;
   }
 
@@ -174,7 +153,7 @@
 }
 
 /* Стили для 2K разрешений */
-@media (min-width: 2560px) and (max-width: 3839.98px) {
+@media (min-width: 2560px) and (max-width: 3839px) {
   :root {
     --container-width: 2200px;
   }
@@ -236,10 +215,6 @@
     gap: 30px;
   }
 
-  .portfolio__list li:nth-child(n+9) {
-    display: none;
-  }
-
   .services__title {
     font-size: 72px;
     margin-bottom: 60px;
@@ -247,23 +222,6 @@
 
   .services__subtitle {
     font-size: 48px;
-  }
-
-  .reviews__star {
-    width: 50px;
-    height: 50px;
-  }
-
-  .reviews__wrapper-photo {
-    flex: 0 0 255px;
-  }
-
-  .reviews__text {
-    font-size: 20px;
-  }
-
-  .reviews__name {
-    font-size: 26px;
   }
 
   .pricing-grid {
@@ -341,7 +299,7 @@
 }
 
 /* Стили для Full HD и широкоэкранных мониторов */
-@media (min-width: 1920px) and (max-width: 2559.98px) {
+@media (min-width: 1920px) and (max-width: 2559px) {
   :root {
     --container-width: 1800px;
   }
@@ -358,10 +316,6 @@
   .portfolio__main-title,
   .about__title {
     font-size: 64px;
-  }
-
-  .header_top {
-    margin-bottom: 10px;
   }
 
   .header__title {
@@ -394,21 +348,14 @@
     margin-bottom: 40px;
   }
 
-  .portfolio__list li:nth-child(n+9) {
-    display: none;
-  }
-
   .nav__link {
     font-size: 22px;
     padding: 15px 25px;
   }
 
   .reviews__photo {
-    flex: 0 0 150px;
-  }
-
-  .reviews__wrapper-photo {
-    flex: 0 0 210px;
+    width: 250px;
+    height: 250px;
   }
 
   .reviews__sample-photo {
@@ -548,18 +495,41 @@
   }
 }
 
-/* Стили для ноутбуков */
-@media (min-width: 992px) and (max-width: 1919.98px) {
-  :root {
-    --container-width: 1200px;
+@media (min-width: 1921px) {
+  .header_top {
+    margin-bottom: 10px;
   }
+}
 
-  .reviews__wrapper-photo {
-    flex: 0 0 180px;
+/* Сетка портфолио для больших экранов */
+@media (min-width: 1320px) {
+  .portfolio__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .reviews__photo {
+    width: 200px;
+    height: 200px;
   }
 
   .reviews__name {
     font-size: 26px;
+  }
+}
+
+@media (min-width: 1919px) {
+  .portfolio__list li:nth-child(n+9) {
+    display: none;
+  }
+}
+
+
+/* Стили для ноутбуков */
+@media (min-width: 992px) and (max-width: 1919px) {
+  :root {
+    --container-width: 1200px;
   }
 
   .container {
@@ -636,27 +606,24 @@
 }
 
 /* Стили для планшетов (ландшафтная ориентация) */
-@media (min-width: 767px) and (max-width: 992.98px) {
+@media (min-width: 767px) and (max-width: 992px) {
   :root {
     --container-width: 100%;
     padding: 0 20px;
   }
 
-  .header__nav-container {
-    max-width: 100vw;
-    padding: 10px 15px;
+  .about__text {
+    font-size: 14px;
+    line-height: 1.8;
   }
 
-  .header__nav-container .nav__list {
-    max-width: 100%;
+  .portfolio__list {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero__image img {
+  .portfolio__list li:nth-child(n+7) {
     display: none;
-  }
-
-  .title {
-    font-size: 34px;
   }
 
   .about__container {
@@ -670,49 +637,13 @@
     -webkit-box-flex: 0;
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
-    width: 100%;
     margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .about__left img {
-    content: url("../img/avatars/photo1.webp");
-    max-height: 568px;
-    width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    border-radius: 25px;
+    margin-bottom: 15px;
   }
 
   .about__text {
     font-size: 14px;
     line-height: 30px;
-  }
-
-  .about__title,
-  .portfolio__main-title {
-    font-size: 40px;
-  }
-
-  .about__text {
-    font-size: 14px;
-    line-height: 1.8;
-  }
-
-  .about__info {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    width: 100%;
-  }
-
-  .portfolio__list {
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .portfolio__list li:nth-child(n+7) {
-    display: none;
   }
 
   .pricing-grid {
@@ -757,9 +688,7 @@
 
   .extras-grid,
   .services-types {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
     max-width: 600px;
   }
@@ -810,8 +739,11 @@
     width: 100%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+
     display: -webkit-box;
+
     display: -ms-flexbox;
+
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -822,13 +754,122 @@
     align-items: center;
     text-align: center;
   }
+}
+
+@media (min-width: 767px) {
+  .reviews__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .reviews__wrapper-photo {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 150px;
+    flex: 0 0 150px;
+    margin-bottom: 0;
+  }
+
+  .reviews__photo {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 150px;
+    flex: 0 0 150px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .reviews__content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding-left: 20px;
+  }
 
   .reviews__name {
     font-size: 22px;
   }
 
+  .reviews__star {
+    width: 25px;
+    height: 25px;
+  }
+
+  .reviews__text {
+    font-size: 12px;
+  }
+
+  .reviews__card .reviews__wrapper .reviews__item .wrapper-photo img {
+    max-height: 200px;
+  }
+}
+
+/* Стили для планшетов и мобильных (до 991px) */
+@media (max-width: 992px) {
+  .header__nav-container {
+    max-width: 100vw;
+    padding: 10px 15px;
+  }
+
+  .header__nav-container .nav__list {
+    max-width: 100%;
+  }
+
+  .hero__image img {
+    display: none;
+  }
+
+  .about__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .about__title,
+  .portfolio__main-title {
+    font-size: 40px;
+  }
+
+  .about__left {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .about__left img {
+    content: url("../img/avatars/photo1.webp");
+    max-height: 449px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+
+  .about__info {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
   .reviews__card {
     padding: 30px;
+  }
+
+  .reviews__photo {
+    width: 180px;
+    height: 180px;
   }
 
   .reviews__name {
@@ -844,14 +885,6 @@
     max-height: 200px;
   }
 
-  .reviews__text {
-    font-size: 12px;
-  }
-
-  .reviews__card .reviews__wrapper .reviews__item .wrapper-photo img {
-    max-height: 200px;
-  }
-
   .footer__logo img {
     height: 42px;
   }
@@ -861,7 +894,8 @@
   }
 }
 
-@media (max-width: 766.98px) {
+/* Бургер-меню для всех мобильных устройств (до 767px) */
+@media (max-width: 767px) {
   :root {
     --container-width: 100%;
     padding: 0 15px;
@@ -883,6 +917,125 @@
     display: none;
   }
 
+  /* Стили для бургер-иконки */
+  .burger-menu {
+    display: block;
+    position: fixed;
+    top: 15px;
+    right: 3px;
+    z-index: 1000;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .header__container {
+    position: relative;
+    padding: 15px 0;
+  }
+
+  .burger-icon {
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-black);
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  /* Стили для мобильного меню */
+  .mobile-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(237, 226, 222, 0.98);
+    z-index: 999;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+
+  .mobile-nav.open {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  .mobile-nav__list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .mobile-nav__item {
+    margin: 20px 0;
+  }
+
+  .mobile-nav__link {
+    color: var(--color-black);
+    font-size: 24px;
+    font-weight: 600;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-nav__link:hover {
+    color: var(--color-steel-blue);
+  }
+
+  /* Анимация бургер-иконки при открытии */
+  .burger-menu[aria-expanded="true"] .burger-icon:nth-child(1) {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+  }
+
+  .burger-menu.open .burger-icon:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-menu.open .burger-icon:nth-child(3) {
+    -webkit-transform: rotate(45deg) translate(-6px, -6px);
+    -ms-transform: rotate(45deg) translate(-6px, -6px);
+    transform: rotate(45deg) translate(-6px, -6px);
+  }
+
+  /* Остальные стили для мобильных */
   .portfolio__list {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -902,40 +1055,20 @@
     font-size: 32px;
   }
 
-  .about__container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
   .about__title {
     margin-bottom: 15px;
   }
 
   .about__left {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    width: 100%;
-    margin-right: 0;
     margin-bottom: 10px;
   }
 
-  .about__left img {
-    content: url(../img/avatars/photo1.webp);
-    max-height: 449px;
-    width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    border-radius: 25px;
+  .header__title {
+    font-size: 28px;
   }
 
-  .about__info {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    width: 100%;
+  .header__text {
+    font-size: 16px;
   }
 
   .about__text {
@@ -943,32 +1076,20 @@
     line-height: 1.6;
   }
 
-  .reviews__item {
-    flex-direction: row;
-    align-items: center;
+  .reviews__card {
+    padding: 20px;
   }
 
-  .reviews__wrapper-photo {
-    flex: 0 0 110px;
-    margin-bottom: 15px;
+  .reviews__card .reviews__wrapper .reviews__item .wrapper-photo img {
+    max-height: 0;
   }
 
   .reviews__photo {
-    flex: 0 0 90px;
-  }
-
-
-  .reviews__card .reviews__wrapper .reviews__item .wrapper-photo {
-    display: none;
-  }
-
-  .reviews__card {
-    padding: 20px;
-    margin-bottom: 15px;
-  }
-
-  .reviews__text {
-    font-size: 12px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100px;
+    flex: 0 0 100px;
+    width: 100px;
+    height: 100px;
   }
 
   .reviews__sample-photo {
@@ -1098,124 +1219,6 @@
   .footer__logo img {
     height: 38px;
   }
-
-  /* Бургер */
-  .burger-menu {
-    display: block;
-    position: fixed;
-    top: 15px;
-    right: 3px;
-    z-index: 1000;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 4px;
-    width: 40px;
-    height: 40px;
-    padding: 6px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  .header__container {
-    position: relative;
-    padding: 15px 0;
-  }
-
-  .burger-icon {
-    width: 24px;
-    height: 2px;
-    background-color: var(--color-black);
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    display: block;
-  }
-
-  /* Стили для мобильного меню */
-  .mobile-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(237, 226, 222, 0.98);
-    z-index: 999;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    transform: translateY(-100%);
-    -webkit-transition: -webkit-transform 0.3s ease;
-    transition: -webkit-transform 0.3s ease;
-    -o-transition: transform 0.3s ease;
-    transition: transform 0.3s ease;
-    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-    padding: 20px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    overflow-y: auto;
-  }
-
-  .mobile-nav.open {
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  .mobile-nav__list {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-  }
-
-  .mobile-nav__item {
-    margin: 20px 0;
-  }
-
-  .mobile-nav__link {
-    color: var(--color-black);
-    font-size: 24px;
-    font-weight: 600;
-    -webkit-transition: color 0.3s ease;
-    -o-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-  }
-
-  .mobile-nav__link:hover {
-    color: var(--color-steel-blue);
-  }
-
-  /* Анимация бургер-иконки при открытии */
-  .burger-menu[aria-expanded="true"] .burger-icon:nth-child(1) {
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    -webkit-transform-origin: center;
-    -ms-transform-origin: center;
-    transform-origin: center;
-  }
-
-  .burger-menu.open .burger-icon:nth-child(2) {
-    opacity: 0;
-  }
-
-  .burger-menu.open .burger-icon:nth-child(3) {
-    -webkit-transform: rotate(45deg) translate(-6px, -6px);
-    -ms-transform: rotate(45deg) translate(-6px, -6px);
-    transform: rotate(45deg) translate(-6px, -6px);
-  }
 }
 
 @media (max-width: 540px) {
@@ -1233,10 +1236,6 @@
 
   .title {
     font-size: 23px;
-  }
-
-  .header__title {
-    font-size: 32px;
   }
 
   .container {
@@ -1273,12 +1272,12 @@
     font-size: 20px;
   }
 
-  .reviews__wrapper-photo {
-    flex: 0 0 85px;
-  }
-
   .reviews__photo {
-    flex: 0 0 50px;
+    width: 60px;
+    height: 60px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 60px;
+    flex: 0 0 60px;
   }
 
   .reviews__name {
@@ -1399,10 +1398,6 @@
     font-size: 22px;
   }
 
-  .header__title {
-    font-size: 28px;
-  }
-
   .about__text {
     font-size: 13px;
   }
@@ -1426,31 +1421,6 @@
 
   .extra-card__item {
     margin-bottom: 8px;
-  }
-
-  .portfolio__list {
-    gap: 10px;
-  }
-
-  .reviews__name {
-    font-size: 12px;
-  }
-
-  .reviews__star {
-    width: 15px;
-    height: 15px;
-  }
-
-  .reviews__text {
-    font-size: 8px;
-  }
-
-  .reviews__wrapper-photo {
-    flex: 0 0 70px;
-  }
-
-  .reviews__photo {
-    flex: 0 0 40px;
   }
 
   .footer__logo img {
